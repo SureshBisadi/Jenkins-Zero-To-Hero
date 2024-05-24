@@ -33,11 +33,6 @@ pipeline {
         }
       }
     }
-    stage('Set Permissions') {
-            steps {
-                sh 'sudo chmod 777 -R /var/run/docker.sock'
-            }
-        }
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "sureshbisadi/ultimate-cicd:${BUILD_NUMBER}"
